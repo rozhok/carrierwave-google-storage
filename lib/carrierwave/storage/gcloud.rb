@@ -39,6 +39,10 @@ module CarrierWave
         raise 'use Object Lifecycle Management to clean the cache'
       end
 
+      def delete_dir!(path)
+        # connection.file(path).delete
+      end
+
       def connection
         @connection ||= begin
           conn_cache = self.class.connection_cache
